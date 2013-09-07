@@ -26,6 +26,7 @@ end
 group :production do
   gem 'unicorn'
   gem 'rails_12factor'
+  gem 'heroku-deflater'
 end
 group :test do
   gem 'capybara'
