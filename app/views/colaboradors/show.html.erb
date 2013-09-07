@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @colaborador.nombre %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @colaborador.telefono %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @colaborador.email %>
+</p>
+
+<p>
+  <strong>Empresa:</strong>
+  <%= @colaborador.empresa %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @colaborador.user %>
+</p>
+
+<%= link_to 'Edit', edit_colaborador_path(@colaborador) %> |
+<%= link_to 'Back', colaboradors_path %>

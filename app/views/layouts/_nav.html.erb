@@ -1,0 +1,22 @@
+  <!-- side left, its part to menu on left-->
+            <div id="navside" class="side-left" data-collapse="navbar">
+                <form class="form-inline search-module" action="?" method="post" />
+                    <div class="input-append input-append-inline">
+                        <input name="search" class="input-block-level" type="text" placeholder="buscar" />
+                        <button class="btn bg-cyan" type="button">
+                            <i class="aweso-search"></i>
+                        </button>
+                    </div>
+                </form>
+                <!--nav, this structure create with nav (find the bootstrap doc about .nav list) -->
+                <ul class="nav nav-list">
+                  
+                    <li><%= link_to "Ventas", sales_path %></li>
+                    <li><%= link_to "Productos", productos_path %></li>
+                    <li><%= link_to "Inventario", stocks_path %></li>
+                    <li><%= link_to "Colaboradores", colaboradors_path %></li>
+
+
+                  
+                </ul><!--/ nav -->
+            </div><!--/ side left-->

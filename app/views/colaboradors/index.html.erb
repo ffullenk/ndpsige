@@ -1,0 +1,78 @@
+<!-- content header -->
+<header class="content-header">
+  <!-- content action (optional)-->
+  <ul class="content-action pull-right">
+    
+    <li>  <%= link_to "Nuevo Colaborador", new_colaborador_path, :class=>"btn btn-link" %></li>
+    
+    </ul> <!-- /content action -->
+    <!-- content title-->
+    <div class="page-header"><h1>Colaboradores</h1></div>
+    <!-- content breadcrumb -->
+    <ul class="breadcrumb breadcrumb-inline">
+      <li><a href="#">Inicio</a> <span class="divider"><i class="aweso-angle-right"></i></span></li>
+      <li class="active">Colaboradores</li>
+    </ul>
+    </header> <!--/ content header -->
+    
+    
+    <!-- content page -->
+    <article class="content-page">
+    <!-- main page, you're application here -->
+    <div class="main-page">
+      <div class="content-inner">
+        <!-- widget datatables #1 -->
+        <div class="widget border-cyan" id="widget-datatables1">
+          <!-- widget header -->
+          <div class="widget-header bg-cyan">
+            <!-- widget icon -->
+            <div class="widget-icon"><i class="aweso-table"></i></div>
+            <!-- widget title -->
+            <h4 class="widget-title">Listado de colaboradores</h4>
+            <!-- widget action, you can also use btn, btn-group, nav-tabs or nav-pills (also support dropdown). enjoy! -->
+            <div class="widget-action color-cyan">
+              <button data-toggle="collapse" data-collapse="#widget-datatables1" class="btn">
+              <i class="aweso-minus" data-toggle-icon="aweso-minus aweso-plus"></i>
+              </button>
+            </div>
+            </div><!-- /widget header -->
+            <!-- widget content -->
+            <div class="widget-content">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                    
+                    <th class="span1"></th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @colaboradors.each do |colaborador| %>
+                  <tr>
+                    <td><%= colaborador.nombre %></td>
+                    <td><%= colaborador.telefono %></td>
+                    <td><%= colaborador.email %></td>
+                    <td>
+                      <div class="btn-group">
+                        <%= link_to 'Ver', colaborador, :class=>"btn btn-primary" %>
+                        <%= link_to 'Editar', edit_colaborador_path(colaborador), :class=>"btn btn-warning" %>
+                        <%= link_to 'Eliminar', colaborador, method: :delete, data: { confirm: 'Seguro?' }, :class=>"btn btn-danger" %>
+                      </div>
+                    </td>
+                  </tr>
+    
+                <%end%>
+              </tbody>
+            </table>
+            </div><!-- /widget content -->
+            </div> <!-- /widget datatables #1 -->
+            
+            
+            </div><!-- /content-inner-->
+            </div><!-- /main-page-->
+            <div class="clearfix"></div>
+            </article> <!-- /content page -->

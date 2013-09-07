@@ -1,0 +1,17 @@
+<%= simple_form_for(@stock) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :articulo %>
+    <%= f.input :cantidad %>
+    <%= f.input :precio_unitario %>
+    <%= f.input :precio_total %>
+    <%= f.association :user %>
+    <%= f.association :empresa %>
+    <%= f.input :fecha_compra %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

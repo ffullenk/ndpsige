@@ -1,8 +1,47 @@
-<h2>Sign in</h2>
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
-  <%= f.input :email, :autofocus => true %>
-  <%= f.input :password %>
-  <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-  <%= f.button :submit, "Sign in", :class => 'btn-primary' %>
-<% end %>
-<%= render "devise/shared/links" %>
+<section class="section-content bg-none">
+    <!-- start content -->
+    <div class="content full-page">
+        
+        <!-- content page -->
+        <article class="content-page">
+        <!-- main page, you're application here -->
+        <div class="main-page">
+            <div class="content-inner">
+                <div class="row-fluid">
+                    <div class="span4 offset4">
+                        <!-- widget login -->
+                        <div class="widget no-border bg-black">
+                            <!-- widget content -->
+                            <div class="widget-content">
+                                <div class="text-center color-silver">
+                                    <h1>
+                                    <a href="http://www.ndp.cl" target="_blank" class="help-block" title="your logo"><i class="aweso-th-large text-4x"></i></a>
+                                   NDP Consultores
+                                    </h1>
+                                    <h4>
+                                        Sistema Gestión de Información
+                                    </h4>
+                                </div>
+                                <%= simple_form_for(resource,:html => {:class => 'form-vertical' }, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+                                <div class="form-inputs">
+                                    <%= f.input :email, :required => false, :autofocus => true ,:placeholder=> "Email", :label=> false, :input_html=> {:class=>"input-block-level"} %>
+                                    <%= f.input :password, :required => false,:placeholder=> "Password", :label=> false, :input_html=> {:class=>"input-block-level"} %>
+                                   
+                                </div>
+                     
+                                    <%= f.button :submit, "Entrar", :class=>"btn btn-large btn-block bg-cyan" %>
+                
+                                <% end %>
+                                
+                                </div><!-- /widget content -->
+                                </div> <!-- /widget login -->
+                                
+                                </div><!-- /span offset4 -->
+                                </div><!-- /row -->
+                                
+                                </div><!-- /content-inner -->
+                                </div><!-- /main-page -->
+                                
+                                </article> <!-- /content page -->
+                                </div> <!--/ end content -->
+                                </section> <!-- /end section content-->

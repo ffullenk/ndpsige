@@ -1,0 +1,86 @@
+
+                <!-- content header -->
+                <header class="content-header">
+                    <!-- content action (optional)-->
+                    <ul class="content-action pull-right">
+           
+                    <li>  <%= link_to "Nueva Venta", new_sale_path, :class=>"btn btn-link" %></li>
+         
+                    </ul> <!-- /content action -->
+
+                    <!-- content title-->
+                    <div class="page-header"><h1>Ventas</h1></div>
+
+                    <!-- content breadcrumb -->
+                    <ul class="breadcrumb breadcrumb-inline">
+                        <li><a href="#">Inicio</a> <span class="divider"><i class="aweso-angle-right"></i></span></li>
+                        <li class="active">Ventas</li>
+                    </ul>
+                </header> <!--/ content header -->
+                
+                
+                <!-- content page -->
+                <article class="content-page">
+                    <!-- main page, you're application here -->
+                    <div class="main-page">
+                        <div class="content-inner">
+                            <!-- widget datatables #1 -->
+                            <div class="widget border-cyan" id="widget-datatables1">
+                                <!-- widget header -->
+                                <div class="widget-header bg-cyan">
+                                    <!-- widget icon -->
+                                    <div class="widget-icon"><i class="aweso-table"></i></div>
+                                    <!-- widget title -->
+                                    <h4 class="widget-title">Listado ventas</h4>
+                                    <!-- widget action, you can also use btn, btn-group, nav-tabs or nav-pills (also support dropdown). enjoy! -->
+                                    <div class="widget-action color-cyan">
+                                        <button data-toggle="collapse" data-collapse="#widget-datatables1" class="btn">
+                                            <i class="aweso-minus" data-toggle-icon="aweso-minus aweso-plus"></i>
+                                        </button>
+                                    </div>
+                                </div><!-- /widget header -->
+
+                                <!-- widget content -->
+                               <div class="widget-content">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Fecha</th>
+                                                        <th>Cliente</th>
+                                                        <th>Boleta</th>
+                                                        <th>$Total</th>
+                                                        <th>Medio Pago</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <% @sales.each do |venta| %>
+                                                    <tr>
+                                                        <td><%= venta.id %></td>
+                                                        <td><%= venta.fecha %></td>
+                                                        <td><%= venta.nombrecliente %></td>
+                                                        <td>@<%= venta.boleta %></td>
+                                                        <td>@<%= number_to_currency(venta.total) %></td>
+                                                        <td>@<%= venta.medio_pago.nombre if venta.medio_pago %></td>
+                                                    </tr>
+                                                    <%end%>
+                                                    </tbody>
+                                            </table>
+                                        </div><!-- /widget content -->
+                            </div> <!-- /widget datatables #1 -->
+
+
+
+                   
+
+             
+
+
+
+                        </div><!-- /content-inner-->
+                    </div><!-- /main-page-->
+
+                    <div class="clearfix"></div>
+                </article> <!-- /content page -->
+
+

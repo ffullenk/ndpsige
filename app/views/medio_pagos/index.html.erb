@@ -1,0 +1,27 @@
+<h1>Listing medio_pagos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medio_pagos.each do |medio_pago| %>
+      <tr>
+        <td><%= medio_pago.nombre %></td>
+        <td><%= link_to 'Show', medio_pago %></td>
+        <td><%= link_to 'Edit', edit_medio_pago_path(medio_pago) %></td>
+        <td><%= link_to 'Destroy', medio_pago, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medio pago', new_medio_pago_path %>

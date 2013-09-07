@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Articulo:</strong>
+  <%= @stock.articulo %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @stock.cantidad %>
+</p>
+
+<p>
+  <strong>Precio unitario:</strong>
+  <%= @stock.precio_unitario %>
+</p>
+
+<p>
+  <strong>Precio total:</strong>
+  <%= @stock.precio_total %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @stock.user %>
+</p>
+
+<p>
+  <strong>Empresa:</strong>
+  <%= @stock.empresa %>
+</p>
+
+<p>
+  <strong>Fecha compra:</strong>
+  <%= @stock.fecha_compra %>
+</p>
+
+<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<%= link_to 'Back', stocks_path %>

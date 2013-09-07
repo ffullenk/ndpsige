@@ -1,0 +1,55 @@
+<!-- content header -->
+<header class="content-header">
+  
+  <!-- content title-->
+  <div class="page-header"><h1>Agregar Colaborador</h1></div>
+  <!-- content breadcrumb -->
+  <ul class="breadcrumb breadcrumb-inline">
+    <li><a href="#">Inicio</a> <span class="divider"><i class="aweso-angle-right"></i></span></li>
+    <li class="active">Colaboradores</li>
+  </ul>
+  </header> <!--/ content header -->
+  
+  
+  <!-- content page -->
+  <article class="content-page">
+  <!-- main page, you're application here -->
+  <div class="main-page">
+    <div class="content-inner">
+      <!-- FORM HORIZONTAL
+      ================================================== -->
+      <!-- widget form horizontal -->
+      <div class="widget border-cyan" id="widget-horizontal">
+        <!-- widget header -->
+        <div class="widget-header bg-cyan">
+          <!-- widget icon -->
+          <div class="widget-icon"><i class="aweso-edit"></i></div>
+          <!-- widget title -->
+          <h4 class="widget-title">Formulario</h4>
+          <!-- widget action, you can also use btn, btn-group, nav-tabs or nav-pills (also support dropdown). enjoy! -->
+          <div class="widget-action color-cyan">
+            <button data-toggle="collapse" data-collapse="#widget-horizontal" class="btn">
+            <i class="aweso-minus" data-toggle-icon="aweso-minus aweso-plus"></i>
+            </button>
+          </div>
+          </div><!-- /widget header -->
+          <!-- widget content -->
+          <div class="widget-content">
+            <%= simple_form_for(@colaborador, :html => {:class=>"form-horizontal"}) do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :nombre, label: "Nombre Completo" %>
+              <%= f.input :telefono, label: "Teléfono" %>
+              <%= f.input :email, label: "Email" %>
+            </div>
+            <div class="form-actions bg-silver">
+              <%= link_to 'Atrás', :back, :class=>"btn"  %>
+              <%= f.button :submit, "Enviar", :class=>"btn btn-primary" %>
+            </div>
+            
+            <% end %>
+            </div><!-- /widget content -->
+            </div> <!-- /widget form horizontal -->
+            </div><!-- /content-inner-->
+            </div><!-- /main-page-->
+            </article> <!-- /content page -->

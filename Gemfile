@@ -1,24 +1,23 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 gem 'rails', '4.0.0'
+
+gem 'jquery-rails'
+gem 'twitter-bootstrap-rails'
+# gem 'less-rails'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 1.2'
-gem 'devise'
-gem 'figaro'
-gem 'less-rails'
-gem 'pg'
-gem 'simple_form', '>= 3.0.0.rc'
-gem 'therubyracer', :platform=>:ruby
-gem 'twitter-bootstrap-rails'
+gem 'coffee-rails', '~> 4.0.0'
+
+
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'hub', :require=>nil
   gem 'quiet_assets'
+  gem 'therubyracer', :platform=>:ruby
 end
 group :development, :test do
   gem 'rspec-rails'
@@ -34,3 +33,13 @@ group :test do
   gem 'email_spec'
   gem 'launchy'
 end
+
+
+
+gem 'jbuilder', '~> 1.2'
+gem 'devise'
+gem 'figaro'
+gem 'pg'
+gem 'simple_form', '>= 3.0.0.rc'
+
+
