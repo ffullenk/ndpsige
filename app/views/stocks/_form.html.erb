@@ -1,17 +1,57 @@
-<%= simple_form_for(@stock) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :articulo %>
-    <%= f.input :cantidad %>
-    <%= f.input :precio_unitario %>
-    <%= f.input :precio_total %>
-    <%= f.association :user %>
-    <%= f.association :empresa %>
-    <%= f.input :fecha_compra %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+<!-- content header -->
+<header class="content-header">
+  
+  <!-- content title-->
+  <div class="page-header"><h1>Agregar Stock</h1></div>
+  <!-- content breadcrumb -->
+  <ul class="breadcrumb breadcrumb-inline">
+    <li><a href="#">Inicio</a> <span class="divider"><i class="aweso-angle-right"></i></span></li>
+    <li><a href="#">Inventario</a> <span class="divider"><i class="aweso-angle-right"></i></span></li>
+    <li class="active">Agregar Stock</li>
+  </ul>
+  </header> <!--/ content header -->
+  
+  
+  <!-- content page -->
+  <article class="content-page">
+  <!-- main page, you're application here -->
+  <div class="main-page">
+    <div class="content-inner">
+      <!-- FORM HORIZONTAL
+      ================================================== -->
+      <!-- widget form horizontal -->
+      <div class="widget border-cyan" id="widget-horizontal">
+        <!-- widget header -->
+        <div class="widget-header bg-cyan">
+          <!-- widget icon -->
+          <div class="widget-icon"><i class="aweso-edit"></i></div>
+          <!-- widget title -->
+          <h4 class="widget-title">Formulario</h4>
+          <!-- widget action, you can also use btn, btn-group, nav-tabs or nav-pills (also support dropdown). enjoy! -->
+          <div class="widget-action color-cyan">
+            <button data-toggle="collapse" data-collapse="#widget-horizontal" class="btn">
+            <i class="aweso-minus" data-toggle-icon="aweso-minus aweso-plus"></i>
+            </button>
+          </div>
+          </div><!-- /widget header -->
+          <!-- widget content -->
+          <div class="widget-content">
+            <%= simple_form_for(@stock, :html => {:class=>"form-horizontal"}) do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.association :articulo,:label_method => :nombre,:label=>"Artículo" %>
+              <%= f.input :cantidad ,:label=>"Cantidad", :as => :string%>
+              <%= f.input :precio_unitario ,:label=>"Precio Unitario", :as => :string%>
+              <%= f.input :precio_total,:label=>"Precio Total", :as => :string %>
+              <%= f.input :fecha_compra, :label=>"Fecha Compra", :default => Date.today, :as => :date,  :order=> [:day, :month, :year] %>
+            </div>
+            <div class="form-actions bg-silver">
+              <%= link_to 'Atrás', :back, :class=>"btn"  %>
+              <%= f.button :submit, "Enviar", :class=>"btn btn-primary" %>
+            </div>
+            <% end %>
+            </div><!-- /widget content -->
+            </div> <!-- /widget form horizontal -->
+            </div><!-- /content-inner-->
+            </div><!-- /main-page-->
+            </article> <!-- /content page -->

@@ -4,6 +4,7 @@
   <ul class="content-action pull-right">
     
     <li>  <%= link_to "Agregar Stock", new_stock_path, :class=>"btn btn-link" %></li>
+    <li>  <%= link_to "Agregar Artículo", new_articulo_path, :class=>"btn btn-link" %></li>
     
     </ul> <!-- /content action -->
     <!-- content title-->
@@ -55,11 +56,11 @@
                 <tbody>
                   <% @stocks.each do |stock| %>
                   <tr>
-                    <td><%= stock.articulo.nombre %></td>
-                    <td><%= stock.cantidad %></td>
+                    <td><%= stock.articulo.nombre if stock.articulo %></td>
+                    <td><%= stock.cantidad.presence %></td>
                     <td><%= number_to_currency(stock.precio_unitario) %></td>
                     <td><%= number_to_currency(stock.precio_total) %></td>
-                    <td><%= stock.fecha_compra %></td>
+                    <td><%= stock.fecha_compra.presence %></td>
                     <td>
                       <div class="btn-group">
                         <%= link_to 'Ver', stock, :class=>"btn btn-primary" %>

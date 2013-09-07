@@ -28,7 +28,7 @@ class StocksController < ApplicationController
 
     respond_to do |format|
       if @stock.save
-        format.html { redirect_to @stock, notice: 'Stock was successfully created.' }
+        format.html { redirect_to stocks_path, notice: 'Stock was successfully created.' }
         format.json { render action: 'show', status: :created, location: @stock }
       else
         format.html { render action: 'new' }
