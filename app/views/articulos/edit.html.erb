@@ -1,6 +1,46 @@
-<h1>Editing articulo</h1>
 
+<!-- content header -->
+<header class="content-header">
+	
+	<!-- content title-->
+	<div class="page-header"><h1>Editar Artículo</h1></div>
+	<!-- content breadcrumb -->
+	<ul class="breadcrumb breadcrumb-inline">
+		<li><a href="#">Inicio</a> <span class="divider"><i class="aweso-angle-right"></i></span></li>
+		<li><a href="#">Inventario</a> <span class="divider"><i class="aweso-angle-right"></i></span></li>
+		<li class="active">Artículo</li>
+	</ul>
+	</header> <!--/ content header -->
+	
+	
+	<!-- content page -->
+	<article class="content-page">
+	<!-- main page, you're application here -->
+	<div class="main-page">
+		<div class="content-inner">
+			<!-- FORM HORIZONTAL
+			================================================== -->
+			<!-- widget form horizontal -->
+			<div class="widget border-cyan" id="widget-horizontal">
+				<!-- widget header -->
+				<div class="widget-header bg-cyan">
+					<!-- widget icon -->
+					<div class="widget-icon"><i class="aweso-edit"></i></div>
+					<!-- widget title -->
+					<h4 class="widget-title">Formulario</h4>
+					<!-- widget action, you can also use btn, btn-group, nav-tabs or nav-pills (also support dropdown). enjoy! -->
+					<div class="widget-action color-cyan">
+						<button data-toggle="collapse" data-collapse="#widget-horizontal" class="btn">
+						<i class="aweso-minus" data-toggle-icon="aweso-minus aweso-plus"></i>
+						</button>
+					</div>
+					</div><!-- /widget header -->
+					<!-- widget content -->
+					<div class="widget-content">
+						
 <%= render 'form' %>
-
-<%= link_to 'Show', @articulo %> |
-<%= link_to 'Back', articulos_path %>
+						</div><!-- /widget content -->
+						</div> <!-- /widget form horizontal -->
+						</div><!-- /content-inner-->
+						</div><!-- /main-page-->
+						</article> <!-- /content page -->

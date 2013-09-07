@@ -1,4 +1,6 @@
 Ndpsige::Application.routes.draw do
+  resources :proveedors
+
   resources :stocks
 
   resources :articulos

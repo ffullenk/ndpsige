@@ -1,0 +1,13 @@
+<%= simple_form_for(@proveedor, :html => {:class=>"form-horizontal"}) do |f| %>
+<%= f.error_notification %>
+<div class="form-inputs">
+  <%= f.input :nombre %>
+  <%= f.input :telefono %>
+  <%= f.input :email %>
+  <%= f.input :web %>
+</div>
+<div class="form-actions bg-silver">
+  <%= link_to 'Atrás', :back, :class=>"btn"  %>
+  <%= f.button :submit, "Enviar", :class=>"btn btn-primary" %>
+</div>
+<% end %>

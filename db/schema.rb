@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130906234404) do
+ActiveRecord::Schema.define(version: 20130907051305) do
 
   create_table "articulos", force: true do |t|
     t.string   "nombre"
@@ -19,9 +19,11 @@ ActiveRecord::Schema.define(version: 20130906234404) do
     t.integer  "empresa_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "proveedor_id"
   end
 
   add_index "articulos", ["empresa_id"], name: "index_articulos_on_empresa_id", using: :btree
+  add_index "articulos", ["proveedor_id"], name: "index_articulos_on_proveedor_id", using: :btree
 
   create_table "cajeros", force: true do |t|
     t.string   "nombre"
@@ -84,6 +86,15 @@ ActiveRecord::Schema.define(version: 20130906234404) do
 
   add_index "productosales", ["producto_id"], name: "index_productosales_on_producto_id", using: :btree
   add_index "productosales", ["sale_id"], name: "index_productosales_on_sale_id", using: :btree
+
+  create_table "proveedors", force: true do |t|
+    t.string   "nombre"
+    t.string   "telefono"
+    t.string   "email"
+    t.string   "web"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sales", force: true do |t|
     t.integer  "cajero_id"
