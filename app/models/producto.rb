@@ -9,11 +9,12 @@
 #  precio          :float
 #  created_at      :datetime
 #  updated_at      :datetime
+#  empresa_id      :integer
 #
 
 class Producto < ActiveRecord::Base
   belongs_to :tipoProducto
-
+  belongs_to :empresa
   has_many :productosales
   has_many :sales, through: :productosale
 end

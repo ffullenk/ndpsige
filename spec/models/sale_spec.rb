@@ -2,16 +2,19 @@
 #
 # Table name: sales
 #
-#  id           :integer          not null, primary key
-#  cajero_id    :integer
-#  cliente_id   :integer
-#  medioPago_id :integer
-#  user_id      :integer
-#  created_at   :datetime
-#  updated_at   :datetime
-#  fecha        :datetime
-#  anulado      :boolean
-#  telefonico   :boolean
+#  id            :integer          not null, primary key
+#  cajero_id     :integer
+#  cliente_id    :integer
+#  medioPago_id  :integer
+#  user_id       :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#  fecha         :datetime
+#  anulado       :boolean
+#  telefonico    :boolean
+#  pagopendiente :boolean          default(FALSE), not null
+#  boleta        :string(255)
+#  total         :float
 #
 
 require 'spec_helper'

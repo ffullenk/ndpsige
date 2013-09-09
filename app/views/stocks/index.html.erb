@@ -46,8 +46,6 @@
                     
                     <th>Articulo</th>
                     <th>Cantidad</th>
-                    <th>Precio unitario</th>
-                    <th>Precio total</th>
                     
                     <th>Fecha compra</th>
                     <th class="span1"></th>
@@ -59,8 +57,7 @@
                   <tr>
                     <td><%= stock.articulo.nombre if stock.articulo %></td>
                     <td><%= stock.cantidad.presence %></td>
-                    <td><%= number_to_currency(stock.precio_unitario) %></td>
-                    <td><%= number_to_currency(stock.precio_total) %></td>
+                
                     <td><%= stock.fecha_compra.presence %></td>
                     <td>
                       <div class="btn-group">

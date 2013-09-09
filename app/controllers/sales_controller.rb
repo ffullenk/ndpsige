@@ -15,6 +15,8 @@ class SalesController < ApplicationController
   # GET /sales/new
   def new
     @sale = Sale.new
+    @productos = current_user.empresa.productos
+    @cajeros = current_user.empresa.cajeros
   end
 
   # GET /sales/1/edit
@@ -28,7 +30,7 @@ class SalesController < ApplicationController
 
     respond_to do |format|
       if @sale.save
-        format.html { redirect_to @sale, notice: 'Sale was successfully created.' }
+        format.html { redirect_to sales_path, notice: 'Sale was successfully created.' }
         format.json { render action: 'show', status: :created, location: @sale }
       else
         format.html { render action: 'new' }
@@ -69,6 +71,6 @@ class SalesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sale_params
-      params.require(:sale).permit(:cajero_id, :cliente_id, :medioPago_id, :user_id)
+      params.require(:sale).permit(:cajero_id, :cliente_id, :medioPago_id, :pagopendiente, :user_id, productosales_attributes: [ :producto_id, :cantidad])
     end
 end

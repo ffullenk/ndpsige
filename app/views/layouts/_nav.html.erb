@@ -10,12 +10,33 @@
                 </form>
                 <!--nav, this structure create with nav (find the bootstrap doc about .nav list) -->
                 <ul class="nav nav-list">
-                  
-                    <li><%= link_to "Ventas", sales_path %></li>
-                    <li><%= link_to "Productos", productos_path %></li>
-                    <li><%= link_to "Inventario", stocks_path %></li>
-                    <li><%= link_to "Colaboradores", colaboradors_path %></li>
+                    
+                    <li class="dropdown-list">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown-list">
+                            Ventas 
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><%= link_to "Listado Ventas", sales_path %></li>
+                            <li><%= link_to "Medio de Pago", medio_pagos_path %></li>
+                
+                        </ul>
+                    </li>
 
+                    
+                    <li><%= link_to "Inventario", stocks_path %></li>
+                    <li><%= link_to "Proveedores", proveedors_path %></li>
+                    <li><%= link_to "Colaboradores", colaboradors_path %></li>
+                    <li><%= link_to "Clientes", clientes_path %></li>
+                    <li class="dropdown-list">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown-list">
+                            Productos 
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><%= link_to "Listado Productos", productos_path %></li>
+                            <li><%= link_to "Tipo Productos", tipo_productos_path %></li>
+                
+                        </ul>
+                    </li>
 
                   
                 </ul><!--/ nav -->

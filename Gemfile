@@ -43,5 +43,6 @@ gem 'devise'
 gem 'figaro'
 gem 'pg'
 gem 'simple_form', '>= 3.0.0.rc'
+gem 'awesome_nested_fields'
 
 

@@ -18,4 +18,5 @@ class Empresa < ActiveRecord::Base
   has_many :productos
   has_many :stocks
   has_many :articulos
+  has_many :cajeros
 end

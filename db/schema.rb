@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130907051305) do
+ActiveRecord::Schema.define(version: 20130909234424) do
 
   create_table "articulos", force: true do |t|
     t.string   "nombre"
@@ -29,7 +29,10 @@ ActiveRecord::Schema.define(version: 20130907051305) do
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "empresa_id"
   end
+
+  add_index "cajeros", ["empresa_id"], name: "index_cajeros_on_empresa_id", using: :btree
 
   create_table "clientes", force: true do |t|
     t.string   "nombre"
@@ -72,8 +75,10 @@ ActiveRecord::Schema.define(version: 20130907051305) do
     t.float    "precio"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "empresa_id"
   end
 
+  add_index "productos", ["empresa_id"], name: "index_productos_on_empresa_id", using: :btree
   add_index "productos", ["tipoProducto_id"], name: "index_productos_on_tipoProducto_id", using: :btree
 
   create_table "productosales", force: true do |t|
@@ -106,6 +111,9 @@ ActiveRecord::Schema.define(version: 20130907051305) do
     t.datetime "fecha"
     t.boolean  "anulado"
     t.boolean  "telefonico"
+    t.boolean  "pagopendiente", default: false, null: false
+    t.string   "boleta"
+    t.float    "total"
   end
 
   add_index "sales", ["cajero_id"], name: "index_sales_on_cajero_id", using: :btree
@@ -156,33 +164,5 @@ ActiveRecord::Schema.define(version: 20130907051305) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["empresa_id"], name: "index_users_on_empresa_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "venta_productos", force: true do |t|
-    t.integer  "venta_id"
-    t.integer  "producto_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "venta_productos", ["producto_id"], name: "index_venta_productos_on_producto_id", using: :btree
-  add_index "venta_productos", ["venta_id"], name: "index_venta_productos_on_venta_id", using: :btree
-
-  create_table "ventas", force: true do |t|
-    t.date     "fecha"
-    t.integer  "cajero_id"
-    t.integer  "cliente_id"
-    t.boolean  "anulado"
-    t.boolean  "telefonico"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "boleta"
-    t.string   "nombrecliente"
-    t.integer  "medio_pago_id"
-    t.float    "total"
-  end
-
-  add_index "ventas", ["cajero_id"], name: "index_ventas_on_cajero_id", using: :btree
-  add_index "ventas", ["cliente_id"], name: "index_ventas_on_cliente_id", using: :btree
-  add_index "ventas", ["medio_pago_id"], name: "index_ventas_on_medio_pago_id", using: :btree
 
 end
